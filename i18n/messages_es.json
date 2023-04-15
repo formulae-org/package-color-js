@@ -1,0 +1,17 @@
+{
+	"pathColor" : "Color",
+
+	"nameColor"      : "Color",
+	"leafColor"      : "Color",
+	
+	"nameCreateColor"     : "Creación de color",
+	"mnemonicCreateColor" : "CrearColor",
+	"leafCreateColor"     : "Crear color",
+	"childrenCreateColor" : [ "Componente de rojo", "Componente de verde", "Componente de azul", "Componente de opacidad" ],
+
+	"nameGetComponents"     : "Componentes de color",
+	"mnemonicGetComponents" : "Componentes",
+	"leafGetComponents"     : "Componentes",
+	"childGetComponents"    : "Color a obtener componentes"
+}
+
