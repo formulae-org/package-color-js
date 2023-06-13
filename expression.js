@@ -96,7 +96,7 @@ Color.setExpressions = function(module) {
 	});
 	
 	// 1-parameter functions
-	[ "GetComponents" ].forEach(tag => Formulae.setExpression(module, "Color." + tag, {
+	[ "GetComponents", "InvertColor" ].forEach(tag => Formulae.setExpression(module, "Color." + tag, {
 		clazz:        Expression.Function,
 		getTag:       () => "Color." + tag,
 		getMnemonic:  () => Color.messages["mnemonic" + tag],

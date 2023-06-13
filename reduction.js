@@ -122,6 +122,23 @@ Color.colorExpression = async (colorExpression, session) => {
 	return true;
 };
 
+Color.invertColor = async (invertColor, session) => {
+	let colorExpression = invertColor.children[0];
+	if (colorExpression.getTag() !== "Color.Color") {
+		ReductionManager.setInError(colorExpression, "It must be a color expression");
+		throw new ReductionError();
+	}
+	
+	let result = Formulae.createExpression("Color.Color");
+	result.set("Red",   1 - colorExpression.get("Red"));
+	result.set("Green", 1 - colorExpression.get("Green"));
+	result.set("Blue",  1 - colorExpression.get("Blue"));
+	result.set("Alpha", colorExpression.get("Alpha"));
+	
+	invertColor.replaceBy(result);
+	return true;
+};
+
 Color.compare = async (compare, session) => {
 	let left = compare.children[0], right = compare.children[1];
 	
@@ -144,6 +161,7 @@ Color.compare = async (compare, session) => {
 Color.setReducers = () => {
 	ReductionManager.addReducer("Color.CreateColor",     Color.createColor);
 	ReductionManager.addReducer("Color.GetComponents",   Color.getComponents);
+	ReductionManager.addReducer("Color.InvertColor",     Color.invertColor);
 	ReductionManager.addReducer("Color.ColorExpression", Color.colorExpression);
 	ReductionManager.addReducer("Relation.Compare",      Color.compare);
 }

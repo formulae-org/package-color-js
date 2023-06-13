@@ -12,6 +12,11 @@
 	"nameGetComponents"     : "Componentes de color",
 	"mnemonicGetComponents" : "Componentes",
 	"leafGetComponents"     : "Componentes",
-	"childGetComponents"    : "Color a obtener componentes"
+	"childGetComponents"    : "Color a obtener componentes",
+	
+	"nameInvertColor"     : "Invertir color",
+	"mnemonicInvertColor" : "InvertirColor",
+	"leafInvertColor"     : "Invertir color",
+	"childInvertColor"    : "Color a invertir"
 }
 

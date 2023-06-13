@@ -63,6 +63,7 @@ Color.setEditions = function() {
 	Formulae.addEdition(this.messages.pathColor, null, this.messages.leafColor, Color.editionColor);
 	Formulae.addEdition(this.messages.pathColor, null, this.messages.leafCreateColor, () => Expression.multipleEdition("Color.CreateColor", 3, 0));
 	Formulae.addEdition(this.messages.pathColor, null, this.messages.leafGetComponents, () => Expression.wrapperEdition("Color.GetComponents"));
+	Formulae.addEdition(this.messages.pathColor, null, this.messages.leafInvertColor, () => Expression.wrapperEdition("Color.InvertColor"));
 };
 
 Color.setActions = function() {
