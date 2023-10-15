@@ -159,9 +159,9 @@ Color.compare = async (compare, session) => {
 };
 
 Color.setReducers = () => {
-	ReductionManager.addReducer("Color.CreateColor",     Color.createColor);
-	ReductionManager.addReducer("Color.GetComponents",   Color.getComponents);
-	ReductionManager.addReducer("Color.InvertColor",     Color.invertColor);
-	ReductionManager.addReducer("Color.ColorExpression", Color.colorExpression);
-	ReductionManager.addReducer("Relation.Compare",      Color.compare);
+	ReductionManager.addReducer("Color.CreateColor",     Color.createColor,     "Color.createColor");
+	ReductionManager.addReducer("Color.GetComponents",   Color.getComponents,   "Color.getComponents");
+	ReductionManager.addReducer("Color.InvertColor",     Color.invertColor,     "Color.invertColor");
+	ReductionManager.addReducer("Color.ColorExpression", Color.colorExpression, "Color.colorExpression");
+	ReductionManager.addReducer("Relation.Compare",      Color.compare,         "Color.compare");
 }
