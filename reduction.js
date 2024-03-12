@@ -95,10 +95,26 @@ Color.getComponents = async (getComponents, session) => {
 	let a = colorExpression.get("Alpha");
 	
 	let result = Formulae.createExpression("List.List");
-	result.addChild(CanonicalArithmetic.number2Expr(r, true));
-	result.addChild(CanonicalArithmetic.number2Expr(g, true));
-	result.addChild(CanonicalArithmetic.number2Expr(b, true));
-	result.addChild(CanonicalArithmetic.number2Expr(a, true));
+	result.addChild(
+		CanonicalArithmetic.canonical2InternalNumber(
+			new CanonicalArithmetic.Decimal(new session.Decimal(r))
+		)
+	);
+	result.addChild(
+		CanonicalArithmetic.canonical2InternalNumber(
+			new CanonicalArithmetic.Decimal(new session.Decimal(g))
+		)
+	);
+	result.addChild(
+		CanonicalArithmetic.canonical2InternalNumber(
+			new CanonicalArithmetic.Decimal(new session.Decimal(b))
+		)
+	);
+	result.addChild(
+		CanonicalArithmetic.canonical2InternalNumber(
+			new CanonicalArithmetic.Decimal(new session.Decimal(a))
+		)
+	);
 	
 	getComponents.replaceBy(result);
 	return true;
