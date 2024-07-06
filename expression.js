@@ -46,6 +46,14 @@ Color.Color = class extends Expression.NullaryExpression {
 		super.get(name);
 	}
 	
+	getSerializationNames() {
+		return [ "Red", "Green", "Blue", "Alpha" ];
+	}
+	
+	async getSerializationStrings() {
+		return [ this.redValue.toString(), this.greenValue.toString(), this.blueValue.toString(), this.alphaValue.toString() ];
+	}
+	
 	setSerializationStrings(strings, promises) {
 		let f = parseFloat(strings[0]); if (isNaN(f)) throw "Invalid number: " + strings[0];
 		this.set("Red", f);
@@ -58,14 +66,6 @@ Color.Color = class extends Expression.NullaryExpression {
 		
 		f = parseFloat(strings[3]); if (isNaN(f)) throw "Invalid number: " + strings[3];
 		this.set("Alpha", f);
-	}
-	
-	getSerializationNames() {
-		return [ "Red", "Green", "Blue", "Alpha" ];
-	}
-	
-	getSerializationStrings() {
-		return [ this.redValue.toString(), this.greenValue.toString(), this.blueValue.toString(), this.alphaValue.toString() ];
 	}
 	
 	prepareDisplay(context) {
