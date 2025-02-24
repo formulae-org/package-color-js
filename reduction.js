@@ -96,26 +96,26 @@ Color.getComponents = async (getComponents, session) => {
 	
 	let result = Formulae.createExpression("List.List");
 	result.addChild(
-		CanonicalArithmetic.createInternalNumber(
-			CanonicalArithmetic.createDecimalFromString(r, session),
+		Arithmetic.createInternalNumber(
+			Arithmetic.createDecimalFromString(r, session),
 			session
 		)
 	);
 	result.addChild(
-		CanonicalArithmetic.createInternalNumber(
-			CanonicalArithmetic.createDecimalFromString(g, session),
+		Arithmetic.createInternalNumber(
+			Arithmetic.createDecimalFromString(g, session),
 			session
 		)
 	);
 	result.addChild(
-		CanonicalArithmetic.createInternalNumber(
-			CanonicalArithmetic.createDecimalFromString(b, session),
+		Arithmetic.createInternalNumber(
+			Arithmetic.createDecimalFromString(b, session),
 			session
 		)
 	);
 	result.addChild(
-		CanonicalArithmetic.createInternalNumber(
-			CanonicalArithmetic.createDecimalFromString(a, session),
+		Arithmetic.createInternalNumber(
+			Arithmetic.createDecimalFromString(a, session),
 			session
 		)
 	);
