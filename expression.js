@@ -75,7 +75,14 @@ Color.Color = class extends Expression.NullaryExpression {
 	
 	display(context, x, y) {
 		let bkpFillStyle = context.fillStyle;
-		context.fillStyle = "rgba(" + (this.redValue * 100.0).toString() + "%," + (this.greenValue * 100.0).toString() + "%," + (this.blueValue * 100.0).toString() + "%," + this.alphaValue.toString() + ")";
+		context.fillStyle =
+			"rgba(" +
+			(this.redValue * 100.0).toString() + "%,"+
+			(this.greenValue * 100.0).toString() + "%," +
+			(this.blueValue * 100.0).toString() + "%," +
+			this.alphaValue.toString() +
+			")"
+		;
 		
 		context.fillRect(x, y, 10, 10);
 		
