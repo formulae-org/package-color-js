@@ -12,7 +12,7 @@
 	"nameGetComponents"     : "Color components",
 	"mnemonicGetComponents" : "GetComponents",
 	"leafGetComponents"     : "Get components",
-	"childGetComponents"    : "Color to get componens",
+	"childGetComponents"    : "Color to get components",
 	
 	"nameInvertColor"     : "Invert color",
 	"mnemonicInvertColor" : "InvertColor",
