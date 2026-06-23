@@ -16,7 +16,7 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-'use strict';
+"use strict";
 
 export class Color extends Formulae.Package {}
 
@@ -34,7 +34,7 @@ Color.createColor = async (createColor, session) => {
 			throw new ReductionError();
 		}
 	}
-
+	
 	// green
 	try {
 		g = createColor.children[1].evaluate();
@@ -45,7 +45,7 @@ Color.createColor = async (createColor, session) => {
 			throw new ReductionError();
 		}
 	}
-
+	
 	// blue
 	try {
 		b = createColor.children[2].evaluate();
@@ -56,7 +56,7 @@ Color.createColor = async (createColor, session) => {
 			throw new ReductionError();
 		}
 	}
-
+	
 	// alpha	
 	if (createColor.children.length >= 4) {
 		try {
@@ -69,7 +69,7 @@ Color.createColor = async (createColor, session) => {
 			}
 		}
 	}
-		
+	
 	//////////////////////////
 	
 	let color = Formulae.createExpression("Color.Color");
