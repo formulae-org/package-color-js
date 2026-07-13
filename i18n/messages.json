@@ -17,6 +17,7 @@
 	"nameInvertColor"     : "Invert color",
 	"mnemonicInvertColor" : "InvertColor",
 	"leafInvertColor"     : "Invert color",
-	"childInvertColor"    : "Color to invert"
-}
+	"childInvertColor"    : "Color to invert",
 
+	"actionEditColor" : "Edit color..."
+}

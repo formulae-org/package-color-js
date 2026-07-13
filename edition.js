@@ -38,7 +38,7 @@ Color.editionColor = function() {
 
 Color.actionColor = {
 	isAvailableNow: () => Formulae.sHandler.type != Formulae.ROW_OUTPUT,
-	getDescription: () => "Edit color...",
+	getDescription: () => Color.messages.actionEditColor,
 	doAction: () => {
 		Formulae.Forms.colorSelection(
 			Formulae.sExpression.get("Red"),
@@ -60,10 +60,18 @@ Color.actionColor = {
 };
 
 Color.setEditions = function() {
-	Formulae.addEdition(this.messages.pathColor, null, this.messages.leafColor, Color.editionColor);
-	Formulae.addEdition(this.messages.pathColor, null, this.messages.leafCreateColor, () => Expression.multipleEdition("Color.CreateColor", 3, 0));
-	Formulae.addEdition(this.messages.pathColor, null, this.messages.leafGetComponents, () => Expression.wrapperEdition("Color.GetComponents"));
-	Formulae.addEdition(this.messages.pathColor, null, this.messages.leafInvertColor, () => Expression.wrapperEdition("Color.InvertColor"));
+	// Color creation — opens a color picker, so (like the arithmetic Number entry) it is labeled with plain text
+	Formulae.addEdition(this.messages.pathColor, this.messages.leafColor, this.messages.leafColor, Color.editionColor);
+
+	// Symbolic color constructor CreateColor(r, g, b) — child 0 highlighted
+	Formulae.addEdition(
+		this.messages.pathColor,
+		'<expression tag="Color.CreateColor"><expression tag="Visualization.Selected"><expression tag="Null"/></expression><expression tag="Null"/><expression tag="Null"/></expression>',
+		this.messages.leafCreateColor,
+		() => Expression.multipleEdition("Color.CreateColor", 3, 0)
+	);
+
+	Formulae.addWrapperEditions(this.messages, "Color", "Color", [ "GetComponents", "InvertColor" ]);
 };
 
 Color.setActions = function() {
